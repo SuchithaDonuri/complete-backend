@@ -6,7 +6,7 @@ dns.setServers(["8.8.8.8", "8.8.4.4"]);
 async function connectDB() {
     try {
         await mongoose.connect(
-            "mongodb+srv://yt:suchitha@yt-complete-backend.bp6zw9o.mongodb.net/halley"
+            process.env.MONGODB_URL,
         );
 
         console.log("Connected to DB");
@@ -17,3 +17,5 @@ async function connectDB() {
 }
 
 module.exports = connectDB;
+
+
